@@ -1,6 +1,14 @@
 CREATE DATABASE Crypto;
 \c Crypto;
 
+CREATE TABLE utilisateur (
+    id SERIAL PRIMARY KEY,
+    nom_utilisateur VARCHAR(50) UNIQUE,
+    email VARCHAR(50) UNIQUE,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    date_creation_compte TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE cryptomonnaie (
     id SERIAL PRIMARY KEY,
